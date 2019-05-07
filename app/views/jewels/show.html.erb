@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @jewel.image %>
+</p>
+
+<p>
+  <strong>Collection:</strong>
+  <%= @jewel.collection %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @jewel.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @jewel.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @jewel.price %>
+</p>
+
+<p>
+  <strong>Available:</strong>
+  <%= @jewel.available %>
+</p>
+
+<p>
+  <strong>Collection:</strong>
+  <%= @jewel.collection_id %>
+</p>
+
+<%= link_to 'Edit', edit_jewel_path(@jewel) %> |
+<%= link_to 'Back', jewels_path %>

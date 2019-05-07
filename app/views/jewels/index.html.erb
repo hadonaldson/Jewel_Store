@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Jewels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Available</th>
+      <th>Collection</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jewels.each do |jewel| %>
+      <tr>
+        <td><%= image_tag(jewel.image, :alt => jewel.name, :size => "260x180") %></td>
+        <td><%= jewel.name %></td>
+        <td><%= jewel.description %></td>
+        <td><%= jewel.price %></td>
+        <td><%= jewel.available %></td>
+        <td><%= link_to Collection.find(jewel.collection_id).name  %></td>
+        <td><%= link_to 'Buy', flop_jewel_path(jewel) %></td>
+        <td><%= link_to 'Sell', sell_jewel_path(jewel) %></td>
+        <td><%= link_to 'Show', jewel %></td>
+        <td><%= link_to 'Edit', edit_jewel_path(jewel) %></td>
+        <td><%= link_to 'Destroy', jewel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jewel', new_jewel_path %>
